@@ -1,0 +1,222 @@
+/* Tema inspirado en apps de aprendizaje gamificadas: botones con relieve,
+   tarjetas redondeadas y opciones tipo "chip". Usa la paleta original del sitio. */
+:root {
+  --linea: #e3e3da;
+  --linea-fuerte: #cfd0c6;
+  --superficie: #ffffff;
+  --radio: 16px;
+}
+
+body {
+  font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+}
+a { text-underline-offset: 3px; }
+
+/* Barra y menú */
+.barra { border-bottom: 2px solid var(--linea); }
+.marca { font-weight: 800; }
+.barra nav { max-width: 100%; }
+.menu { gap: 0.3rem; }
+.menu a {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.menu a:hover, .menu a:focus { background: #f1f1ec; border-color: var(--linea); }
+.menu a[aria-current="page"] {
+  background: var(--verde-claro);
+  border-color: var(--verde);
+  color: var(--verde-oscuro);
+}
+.menu .externo {
+  background: var(--naranja);
+  color: #3b1d00;
+  border: 2px solid var(--naranja);
+  border-bottom: 4px solid #a85a1c;
+  border-radius: 12px;
+}
+.menu .externo:hover, .menu .externo:focus { background: #e3873f; border-color: #e3873f; border-bottom-color: #a85a1c; color: #3b1d00; }
+
+/* Botones con relieve */
+.boton, button[type="submit"] {
+  display: inline-block;
+  background: var(--verde);
+  color: #ffffff;
+  border: none;
+  border-bottom: 4px solid var(--verde-oscuro);
+  border-radius: 16px;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+.boton:hover, button[type="submit"]:hover { background: #3a7d4b; color: #ffffff; transform: none; }
+.boton:active, button[type="submit"]:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+  margin-bottom: 3px;
+}
+
+/* Portada */
+.hero { padding: 3rem 0 3.5rem; border-radius: 0 0 32px 32px; }
+.hero-grid {
+  max-width: 1020px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.9rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+.hero h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 800; line-height: 1.1; }
+.hero-titulo img { width: 72px; height: 72px; }
+.hero .lead { font-size: 1.15rem; }
+.hero .boton { background: #ffffff; color: var(--verde-oscuro); border-bottom-color: var(--linea-fuerte); }
+.hero .boton:hover { background: var(--verde-claro); color: var(--verde-oscuro); }
+.hero-senti { display: block; text-align: center; }
+.hero-senti img {
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  transform-origin: 50% 100%;
+  animation: respirar 3.2s ease-in-out infinite;
+}
+.hero-globo {
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+  margin: 0 0 1.1rem;
+  padding: 0.7rem 1rem;
+  background: var(--superficie);
+  color: var(--texto);
+  font-weight: 700;
+  border: 2px solid var(--linea-fuerte);
+  border-radius: 16px;
+}
+.hero-globo::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  background: var(--superficie);
+  border-right: 2px solid var(--linea-fuerte);
+  border-bottom: 2px solid var(--linea-fuerte);
+  transform: rotate(45deg);
+}
+body[data-vista="inicio"] .mascota { display: none; }
+
+/* Banners */
+.banner { padding: 2rem 0 2.3rem; border-radius: 0 0 28px 28px; }
+.banner h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; }
+.banner .lead { opacity: 0.95; }
+
+.contenido h2, .contenido h3 { font-weight: 800; color: var(--verde-oscuro); }
+
+/* Tarjetas */
+.tarjetas a {
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-top: 2px solid var(--linea);
+  border-bottom: 5px solid var(--linea);
+  border-radius: 16px;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.tarjetas a:hover, .tarjetas a:focus {
+  background: var(--verde-claro);
+  border-color: var(--verde);
+  border-top-color: var(--verde);
+  transform: translateY(-2px);
+}
+.tarjetas h3 { color: var(--verde-oscuro); font-weight: 800; }
+
+/* Reporte */
+.resumen li {
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-bottom: 5px solid var(--linea);
+  border-radius: 16px;
+}
+.resumen strong { color: var(--verde); font-weight: 800; font-size: 2.2rem; }
+.barras progress { height: 1.1rem; border: none; border-radius: 999px; background: #e8e8e0; }
+.barras progress::-webkit-progress-bar { background: #e8e8e0; border-radius: 999px; }
+.barras progress::-webkit-progress-value { background: var(--verde); border-radius: 999px; }
+.barras progress::-moz-progress-bar { background: var(--verde); border-radius: 999px; }
+
+/* Opciones del cuestionario como "chips" */
+fieldset {
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-bottom: 5px solid var(--linea);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+}
+legend { font-weight: 800; }
+fieldset label {
+  display: block;
+  margin: 0.45rem 0;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--linea);
+  border-bottom: 4px solid var(--linea);
+  border-radius: 12px;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+fieldset label:hover { background: #f4f4ee; }
+fieldset label:has(input:checked) { background: var(--verde-claro); border-color: var(--verde); }
+input[type="radio"] { accent-color: var(--verde); width: 1.1rem; height: 1.1rem; margin-right: 0.5rem; vertical-align: -3px; }
+fieldset.correcta { background: var(--verde-claro); border-color: var(--verde); }
+fieldset.incorrecta { background: #fde8e7; border-color: #c0392b; }
+
+/* Otros */
+.video { border-radius: 16px; }
+.poster img, .qr img { border: 2px solid var(--linea); border-radius: 16px; }
+.pie { border-radius: 28px 28px 0 0; }
+
+/* Mascota flotante */
+.globo { background: var(--superficie); border: 2px solid var(--linea-fuerte); border-radius: 16px; }
+.globo::after { background: var(--superficie); border-right: 2px solid var(--linea-fuerte); border-bottom: 2px solid var(--linea-fuerte); }
+
+/* Animaciones */
+@keyframes respirar {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.01); }
+}
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.vista:not([hidden]) { animation: entrar 0.3s ease-out; }
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-senti img { max-width: 250px; }
+  .menu { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.4rem; }
+  .menu li { flex: none; }
+  .barra nav { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vista:not([hidden]), .hero-senti img { animation: none; }
+  .boton, button, .tarjetas a, fieldset label { transition: none; }
+}
