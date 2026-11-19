@@ -132,7 +132,7 @@ body[data-vista="inicio"] .mascota { display: none; }
 #problematica .banner { background: var(--verde); color: #ffffff; }
 #sondeo .banner { background: var(--naranja); color: var(--tinta); }
 #resultados .banner { background: var(--turquesa); color: #ffffff; }
-#actividad .banner { background: var(--amarillo); color: var(--tinta); }
+#pae .banner { background: var(--amarillo); color: var(--tinta); }
 #evaluacion .banner { background: var(--lima); color: var(--tinta); }
 #creditos .banner { background: var(--verde-oscuro); color: #ffffff; }
 

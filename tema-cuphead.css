@@ -205,7 +205,7 @@ body[data-vista="inicio"] .mascota { display: none; }
 #problematica .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #2d5a34 0deg 7deg, #3c7144 7deg 14deg); }
 #sondeo .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #c9631f 0deg 7deg, #d97a35 7deg 14deg); }
 #resultados .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #2f6f6b 0deg 7deg, #3d8985 7deg 14deg); }
-#actividad .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #d99a14 0deg 7deg, #eab332 7deg 14deg); }
+#pae .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #d99a14 0deg 7deg, #eab332 7deg 14deg); }
 #evaluacion .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #a82d23 0deg 7deg, #bd4237 7deg 14deg); }
 #creditos .banner { background: repeating-conic-gradient(from 0deg at 50% 130%, #1f3f25 0deg 7deg, #2d5a34 7deg 14deg); }
 

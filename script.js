@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       problematica: "Cuando el refrigerio se abandona, además de desperdiciarse, puede generar problemas de insalubridad en el colegio.",
       sondeo: "Tu opinión cuenta: responder el sondeo nos ayuda a entender por qué se desperdicia el refrigerio.",
       resultados: "Esta sección es solo para docentes.",
-      actividad: "¡Mucha suerte! Si tienes dudas, vuelve a leer la sección Problemática.",
+      pae: "Dale play al video para conocer de dónde vienen los alimentos que recibes en el colegio.",
       creditos: "Gracias por llegar hasta aquí. ¡Senti te invita a cuidar la comida!"
     };
 
@@ -136,45 +136,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("hashchange", function () {
     mostrar(idDesdeHash(), true);
-  });
-
-  var formulario = document.getElementById("cuestionario");
-  if (!formulario) return;
-
-  formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
-
-    var grupos = formulario.querySelectorAll("fieldset");
-    var aciertos = 0;
-    var sinResponder = 0;
-
-    grupos.forEach(function (grupo) {
-      var retro = grupo.querySelector(".retro");
-      var marcada = grupo.querySelector("input[type='radio']:checked");
-
-      grupo.classList.remove("correcta", "incorrecta");
-
-      if (!marcada) {
-        sinResponder++;
-        retro.textContent = "Selecciona una respuesta.";
-        return;
-      }
-
-      if (marcada.value === grupo.dataset.correcta) {
-        aciertos++;
-        grupo.classList.add("correcta");
-        retro.textContent = "Correcto.";
-      } else {
-        grupo.classList.add("incorrecta");
-        retro.textContent = "Incorrecto. Revisa la sección correspondiente e inténtalo de nuevo.";
-      }
-    });
-
-    var resultado = document.getElementById("resultado");
-    if (sinResponder > 0) {
-      resultado.textContent = "Responde todas las preguntas para ver tu resultado.";
-    } else {
-      resultado.textContent = "Resultado: " + aciertos + " de " + grupos.length + " respuestas correctas.";
-    }
   });
 });

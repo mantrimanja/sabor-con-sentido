@@ -418,3 +418,6 @@ fieldset.incorrecta { border-color: #b3261e; background: #fdecea; }
 
 /* La portada con Senti solo se muestra en los temas */
 .hero-senti { display: none; }
+
+/* Video propio */
+.video video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000000; object-fit: contain; }
